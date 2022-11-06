@@ -3,7 +3,7 @@
 
 #include "TransformChar.hpp"
 
-TEST_CASE("Characters are Upeercase, [alphanumeric]"){
+TEST_CASE("Characters are Uppercase, [alphanumeric]"){
     const std::string upper{"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
     const std::string lower{"abcdefghijklmnopqrstuvwxyz"};
 
@@ -28,5 +28,8 @@ TEST_CASE("Digits are transliterated, [alphanumeric]"){
 }
 
 TEST_CASE("Special characters are removed, [punctuation]"){
-    REQUIRE(false);
+    const std::string punct{"!£$%^&*()_-+=}]{[~#@':;?/>.<,|/¬`¦"};
+    for (size_t i = 0; i < punct.size(); i++){
+    REQUIRE(transformChar(punct[i]) == "");
+    }
 }

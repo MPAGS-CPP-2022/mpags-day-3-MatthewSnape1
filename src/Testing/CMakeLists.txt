@@ -17,5 +17,5 @@ add_test(NAME test-Catch COMMAND testCatch)
 
 # - test transformChar
 add_executable(testTransformChar testTransformChar.cpp)
-target_link_libraries(testTransformChar MPAGSCipher)
-add_test(NAME test-transformchar COMMAND testTransformchar)
+target_link_libraries(testTransformChar MPAGSCipher Catch)
+add_test(NAME test-transformchar COMMAND testTransformChar)
