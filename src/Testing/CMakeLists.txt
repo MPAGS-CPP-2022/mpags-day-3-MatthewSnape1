@@ -24,3 +24,8 @@ add_test(NAME test-transformchar COMMAND testTransformChar)
 add_executable(testCaesarCipher testCaesarCipher.cpp)
 target_link_libraries(testCaesarCipher MPAGSCipher Catch)
 add_test(NAME test-caesarcipher COMMAND testCaesarCipher)
+
+# - test CaesarCipher
+add_executable(testCommandLine testCommandLine.cpp)
+target_link_libraries(testCommandLine MPAGSCipher Catch)
+add_test(NAME test-commandline COMMAND testCommandLine)
