@@ -16,26 +16,26 @@ TEST_CASE("Testing Command line,[alphanumeric]"){
     }
 
     SECTION("Testing decrypt"){
-    processCommandLine(std::vector<std::string>{"","--decrypt"},test_set);
-    REQUIRE(test_set.mode == CipherMode::decrypt);
+        processCommandLine(std::vector<std::string>{"","--decrypt"},test_set);
+        REQUIRE(test_set.mode == CipherMode::decrypt);
     }
 
     SECTION("Testing encrypt"){
-    processCommandLine(std::vector<std::string>{"","--encrypt"},test_set);
-    REQUIRE(test_set.mode == CipherMode::encrypt);
+        processCommandLine(std::vector<std::string>{"","--encrypt"},test_set);
+        REQUIRE(test_set.mode == CipherMode::encrypt);
     }
 
     SECTION("Testing help/version/key"){
-    processCommandLine(std::vector<std::string>{"","-h","--version","-k","5"},test_set);
-    REQUIRE(test_set.helpRequested == true);
-    REQUIRE(test_set.versionRequested == true);
-    REQUIRE(test_set.cipherKey == "5");
+        processCommandLine(std::vector<std::string>{"","-h","--version","-k","5"},test_set);
+        REQUIRE(test_set.helpRequested == true);
+        REQUIRE(test_set.versionRequested == true);
+        REQUIRE(test_set.cipherKey == "5");
 
     }
 
     SECTION("Additional help test"){
-    processCommandLine(std::vector<std::string>{"","--help"},test_set);
-    REQUIRE(test_set.helpRequested == true);
+        processCommandLine(std::vector<std::string>{"","--help"},test_set);
+        REQUIRE(test_set.helpRequested == true);
 
     }
 
